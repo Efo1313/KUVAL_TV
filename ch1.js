@@ -19,7 +19,7 @@ window.rawChannels2 = [
         ],
         "img": "https://dl.dropbox.com/s/6nie8uhgdmajvj0/trt%201.png",
         "category": "Haber",
-        "description": "News Channel"
+        "description": "HABER Channel"
     },
 
     {
@@ -33,7 +33,7 @@ window.rawChannels2 = [
         ],
         "img": "https://i.postimg.cc/50TpLNKY/aljazeera.jpg",
         "category": "HABER",
-        "description": "News Channel"
+        "description": "HABER Channel"
     },
 
     {
