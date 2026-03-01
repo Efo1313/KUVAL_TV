@@ -173,40 +173,46 @@
             box-shadow: 10px 0 40px rgba(0,0,0,0.8);
         }
 
-        /* Sidebar Header */
-        .sidebar-header { 
-            padding: 20px 15px; 
-            text-align: center; 
-            color: white; 
-            font-weight: bold; 
-            font-size: 1.1em; 
-            border-bottom: 3px solid #333; 
-            background: rgba(0,0,0,0.7); 
-            flex-shrink: 0; 
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+        /* Sidebar Header Kısmını Bul ve Bununla Değiştir */
+.sidebar-header { 
+    padding: 20px 15px; 
+    border-bottom: 3px solid #333; 
+    background: rgba(0,0,0,0.7); 
+    flex-shrink: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Yazıyı tam ortaya toplar */
+    position: relative;      /* Butonu sağa sabitlemek için */
+    min-height: 70px;
+}
 
-        .sidebar-close {
-            background: transparent;
-            border: none;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
+.sidebar-header span { 
+    font-size: 1.1em; 
+    font-weight: bold; 
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-align: center;
+    width: 100%;             /* Tam genişlik vererek ortalar */
+}
 
-        .sidebar-close:hover {
-            background: rgba(255,255,255,0.1);
-        }
+.sidebar-close {
+    position: absolute;      /* Yazıdan bağımsız sağa sabitler */
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
         
         /* List Switcher */
         .list-switcher { 
