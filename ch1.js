@@ -37,7 +37,7 @@ window.rawChannels2 = [
     },
 
     {
-        "name": "ATN News",
+        "name": "TRT HABER",
         "sources": [
             {
                 "name": "⚡ Server 2",
