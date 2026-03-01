@@ -308,3 +308,11 @@ window.rawChannels2 = [
         "category": "Sports",
         "description": "Sports Channel"
     },
+
+];
+
+// SUMMARY - WITH DRM SUPPORT
+// Total channels: 174
+// Channels with DRM: 19
+// .mpd streams include drm: {kid: "...", key: "..."}
+// Generated with enhanced DRM parsing
