@@ -23,11 +23,11 @@ window.rawChannels2 = [
     },
 
     {
-        "name": "TRT 2",
+        "name": "TRT Youtube",
         "sources": [
             {
                 "name": "Server 1",
-                "url": "https://live-hls-web-aje-fa.thehlive.com/AJE/index.m3u8",
+                "url": "http://www.youtube.com/watch?v=3XHebGJG0bc",
                 "type": "hls"
             }
         ],
