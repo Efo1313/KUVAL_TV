@@ -19,7 +19,7 @@ window.rawChannels2 = [
         ],
         "img": "https://dl.dropbox.com/s/6nie8uhgdmajvj0/trt%201.png",
         "category": "Haber",
-        "description": "HABER Channel"
+        "description": "Haber Channel"
     },
 
     {
@@ -32,8 +32,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/50TpLNKY/aljazeera.jpg",
-        "category": "HABER",
-        "description": "HABER Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -51,8 +51,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/ZRFCxYdp/atn-news.png",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -65,8 +65,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/s2679ZP4/bbc.jpg",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -79,8 +79,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/mgvdN3ZW/btv-cht.jpg",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -98,8 +98,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/QdqkCSFX/channel-24.png",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -117,8 +117,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/jjtWwrG9/ekattor-tv.png",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -131,8 +131,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/KcHxyPzx/ekhon.jpg",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -150,8 +150,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/3rL7TH81/Independent-TV.png",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -169,8 +169,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/dtR7Gh4t/jamuna-tv.png",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -183,8 +183,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/mkVfbs7P/kolkatatv.jpg",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -197,8 +197,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/bNJny8Qw/news-24.png",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -211,8 +211,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/Dydmbp8n/news18-bangla.png",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -225,8 +225,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/RVR9YF6Y/sangsad.jpg",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -244,8 +244,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/HsVVr6FH/somoy-tv.png",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -258,8 +258,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/ZKqXrCqn/wion.jpg",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
     {
@@ -272,8 +272,8 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/pdgPSKps/zee-24ghanta.png",
-        "category": "News",
-        "description": "News Channel"
+        "category": "Haber",
+        "description": "Haber Channel"
     },
 
 
