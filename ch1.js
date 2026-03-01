@@ -23,7 +23,7 @@ window.rawChannels2 = [
     },
 
     {
-        "name": "Al Jazeera",
+        "name": "TRT 2",
         "sources": [
             {
                 "name": "Server 1",
@@ -32,7 +32,7 @@ window.rawChannels2 = [
             }
         ],
         "img": "https://i.postimg.cc/50TpLNKY/aljazeera.jpg",
-        "category": "News",
+        "category": "HABER",
         "description": "News Channel"
     },
 
