@@ -41,12 +41,12 @@ window.rawChannels2 = [
         "sources": [
             {
                 "name": "⚡ Server 2",
-                "url": "https://owrcovcrpy.gpcdn.net/bpk-tv/1706/output/index.m3u8",
+                "url": "https://tv-trthaber.medya.trt.com.trt5/master.m3u8",
                 "type": "hls"
             },
             {
                 "name": "Server 1",
-                "url": "https://tplay.live/out/news/atn-news/index.m3u8",
+                "url": "https://tv-trthaber.medya.trt.com.tr/master.m3u8",
                 "type": "hls"
             }
         ],
