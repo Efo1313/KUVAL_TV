@@ -27,7 +27,7 @@ window.rawChannels2 = [
         "sources": [
             {
                 "name": "Server 1",
-                "url": "http://www.youtube.com/watch?v=3XHebGJG0bc",
+                "url": "https://www.youtube.com/embed/3XHebGJG0bc",
                 "type": "hls"
             }
         ],
