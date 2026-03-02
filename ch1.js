@@ -60,7 +60,7 @@ window.rawChannels2 = [
         "sources": [
             {
                 "name": "Server 1",
-                "url": "https://www.youtube.com/live/3XHebGJG0bc?si=Z57QStjMKLa-chYS",
+                "url": "https://www.youtube.com/embed/3XHebGJG0bc?si=Z57QStjMKLa-chYS",
                 "type": "hls"
             }
         ],
