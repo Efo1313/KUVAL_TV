@@ -56,11 +56,11 @@ window.rawChannels2 = [
     },
 
     {
-        "name": "BBC News",
+        "name": "YoutubeTRT",
         "sources": [
             {
                 "name": "Server 1",
-                "url": "https://tplay.live/out/news/bbc-news/index.m3u8",
+                "url": "https://www.youtube.com/live/3XHebGJG0bc?si=Z57QStjMKLa-chYS",
                 "type": "hls"
             }
         ],
