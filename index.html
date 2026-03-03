@@ -724,32 +724,16 @@ async function playStream(channel, sourceIndex = 0) {
         return false;
     }
     
-    // Orijinal kaynağı kopyalayalım (üzerinde değişiklik yapacağız)
-    let source = { ...channel.sources[sourceIndex] };
-    
+    const source = channel.sources[sourceIndex];
     if (!source || !source.url) {
         showError('Invalid stream source');
         return false;
-    }
-
-    // --- PROXY VE WORKERS DÜZELTMESİ ---
-    if (source.url.includes('workers.dev') || source.url.includes('raid0.glebul.com')) {
-        console.log('Özel sunucu algılandı, Proxy uygulanıyor...');
-        source.url = 'https://corsproxy.io/?' + encodeURIComponent(source.url);
     }
     
     currentSource = source;
     State.currentSourceIndex = sourceIndex;
     State.currentPlayerType = detectPlayerType(source);
     
-    // Mavi Simgeleri Temizle ve Seçili Olana Ekle
-    document.querySelectorAll('.playing-indicator').forEach(el => el.classList.remove('active-blue'));
-    const currentItem = document.getElementById(`ch-${State.currentIndex}`);
-    if (currentItem) {
-        const indicator = currentItem.querySelector('.playing-indicator');
-        if (indicator) indicator.classList.add('active-blue');
-    }
-
     // Skip DASH without DRM
     if (State.currentPlayerType === 'skip') {
         console.log('Skipping non-DRM DASH stream');
@@ -760,6 +744,40 @@ async function playStream(channel, sourceIndex = 0) {
             return false;
         }
     }
+
+    resetPlayers();
+    showLoading();
+
+    let result = false;
+    try {
+        switch (State.currentPlayerType) {
+            case 'hls':
+                result = await playHls(source, channel);
+                break;
+            case 'drm':
+                result = await playDrm(source, channel);
+                break;
+            case 'iframe':
+                result = await playIframe(source, channel);
+                break;
+        }
+    } catch (e) {
+        console.error('Playback error:', e);
+        result = false;
+    }
+
+    if (!result) {
+        if (sourceIndex < channel.sources.length - 1) {
+            return await playStream(channel, sourceIndex + 1);
+        } else {
+            hideLoading();
+            showError('All sources failed');
+            return false;
+        }
+    }
+
+    return true;
+}
 
     resetPlayers();
     showLoading();
