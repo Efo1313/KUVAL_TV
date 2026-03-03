@@ -126,51 +126,53 @@ const CONFIG = {
     QUALITY_LEVELS: ['auto', '1080', '720', '480', '360'],
     
     // Fixed HLS config - Removed conflicting liveSyncDurationCount/liveMaxLatencyDurationCount
-    HLS_CONFIG: {
+        HLS_CONFIG: {
         enableWorker: true,
         enableSoftwareAES: true,
         
-        // Buffer optimization - FIXED: Removed conflicting count properties
+        // --- KRİTİK EKLEME: Yönlendirmeli linkler için ---
+        xhrSetup: function (xhr, url) {
+            xhr.withCredentials = false;
+        },
+        // ------------------------------------------------
+
         maxBufferLength: 60,
         maxMaxBufferLength: 120,
         backBufferLength: 30,
-        liveSyncDuration: 10,           // Use duration only (not count)
-        liveMaxLatencyDuration: 30,     // Use duration only (not count)
+        liveSyncDuration: 10,
+        liveMaxLatencyDuration: 30,
         
-        // Network timeouts
-        fragLoadingTimeOut: 20000,
-        manifestLoadingTimeOut: 20000,
-        levelLoadingTimeOut: 20000,
+        // Zaman aşımı sürelerini ve deneme sayılarını esnettik
+        fragLoadingTimeOut: 30000,
+        manifestLoadingTimeOut: 30000,
+        levelLoadingTimeOut: 30000,
+        manifestLoadingMaxRetry: 6, // Hemen pes etmesin
+        levelLoadingMaxRetry: 6,
         
-        // Stall recovery
-        highBufferWatchdogPeriod: 2,
-        nudgeOffset: 0.1,
-        nudgeMaxRetry: 3,
-        maxFragLookUpTolerance: 0.2,
+        // Stall recovery (Dürtme ayarı)
+        highBufferWatchdogPeriod: 3,
+        nudgeOffset: 0.2, // Yönlendirmeli linklerde 0.2 daha kararlıdır
+        nudgeMaxRetry: 5,
+        maxFragLookUpTolerance: 0.3,
         
-        // Live stream optimization
-        liveDurationInfinity: false,
+        liveDurationInfinity: true, // Bazı workers linkleri sonsuz döngü ister
         enableDateRangeMetadataCues: false,
         enableCEA708Captions: false,
         enableWebVTT: false,
         
-        // Quality switching
         startLevel: -1,
         capLevelToPlayerSize: false,
         capLevelOnFPSDrop: false,
         fpsDroppedMonitoringPeriod: 5000,
         fpsDroppedMonitoringThreshold: 0.2,
         
-        // Audio settings
         audioPreference: 'original',
         enableAudioTrackPreload: true,
         autoStartLoad: true,
         startPosition: -1,
         audioTrackSelectionMode: 'default',
         enableWebAudio: false,
-        audioCodecPreference: 'mp4a.40.2,mp4a.40.5',
         
-        // Buffer management
         maxBufferSize: 60 * 1000 * 1000,
         maxBufferHole: 0.5,
         stretchShortVideoTrack: false,
