@@ -13,7 +13,7 @@ window.rawChannels2 = [
         "sources": [
             {
                 "name": "⚡ Server 1",
-                "url": "https://most21-pro21.efomost2.workers.dev/playlist/hd-bnt-1-hd-online.m3u8",
+                "url": "https://most21-pro21.efomost2.workers.dev/playlist/hd-bnt-1-hd-online",
                 "type": "hls"
             }
         ],
