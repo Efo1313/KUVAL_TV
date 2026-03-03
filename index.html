@@ -126,45 +126,54 @@ const CONFIG = {
     QUALITY_LEVELS: ['auto', '1080', '720', '480', '360'],
     
     // Fixed HLS config - Removed conflicting liveSyncDurationCount/liveMaxLatencyDurationCount
-        HLS_CONFIG: {
+    HLS_CONFIG: {
         enableWorker: true,
         enableSoftwareAES: true,
         
-        // Standart Buffer Ayarları
-        maxBufferLength: 30,
-        maxMaxBufferLength: 60,
-        liveSyncDurationCount: 3,
-        liveMaxLatencyDurationCount: 10,
+        // Buffer optimization - FIXED: Removed conflicting count properties
+        maxBufferLength: 60,
+        maxMaxBufferLength: 120,
+        backBufferLength: 30,
+        liveSyncDuration: 10,           // Use duration only (not count)
+        liveMaxLatencyDuration: 30,     // Use duration only (not count)
         
-        // Standart Zaman Aşımları
+        // Network timeouts
         fragLoadingTimeOut: 20000,
         manifestLoadingTimeOut: 20000,
         levelLoadingTimeOut: 20000,
         
-        // Standart Hata Kurtarma
+        // Stall recovery
         highBufferWatchdogPeriod: 2,
         nudgeOffset: 0.1,
         nudgeMaxRetry: 3,
         maxFragLookUpTolerance: 0.2,
         
-        liveDurationInfinity: true,
+        // Live stream optimization
+        liveDurationInfinity: false,
         enableDateRangeMetadataCues: false,
         enableCEA708Captions: false,
         enableWebVTT: false,
         
-        // Kalite Ayarları
+        // Quality switching
         startLevel: -1,
         capLevelToPlayerSize: false,
         capLevelOnFPSDrop: false,
+        fpsDroppedMonitoringPeriod: 5000,
+        fpsDroppedMonitoringThreshold: 0.2,
         
-        // Ses Ayarları
+        // Audio settings
         audioPreference: 'original',
         enableAudioTrackPreload: true,
         autoStartLoad: true,
+        startPosition: -1,
+        audioTrackSelectionMode: 'default',
+        enableWebAudio: false,
+        audioCodecPreference: 'mp4a.40.2,mp4a.40.5',
         
-        // Tampon Yönetimi
+        // Buffer management
         maxBufferSize: 60 * 1000 * 1000,
         maxBufferHole: 0.5,
+        stretchShortVideoTrack: false,
         forceKeyFrameOnDiscontinuity: true
     },
     
@@ -733,107 +742,6 @@ async function playStream(channel, sourceIndex = 0) {
             return false;
         }
     }
-
-    resetPlayers();
-    showLoading();
-
-    let result = false;
-    try {
-        switch (State.currentPlayerType) {
-            case 'hls':
-                result = await playHls(source, channel);
-                break;
-            case 'drm':
-                result = await playDrm(source, channel);
-                break;
-            case 'iframe':
-                result = await playIframe(source, channel);
-                break;
-        }
-    } catch (e) {
-        console.error('Playback error:', e);
-        result = false;
-    }
-
-    if (!result) {
-        if (sourceIndex < channel.sources.length - 1) {
-            return await playStream(channel, sourceIndex + 1);
-        } else {
-            hideLoading();
-            showError('All sources failed');
-            return false;
-        }
-    }
-
-    return true;
-}
-    resetPlayers();
-    showLoading();
-
-    let result = false;
-    try {
-        switch (State.currentPlayerType) {
-            case 'hls':
-                result = await playHls(source, channel);
-                break;
-            case 'drm':
-                result = await playDrm(source, channel);
-                break;
-            case 'iframe':
-                result = await playIframe(source, channel);
-                break;
-        }
-    } catch (e) {
-        console.error('Playback error:', e);
-        result = false;
-    }
-
-    if (!result) {
-        if (sourceIndex < channel.sources.length - 1) {
-            return await playStream(channel, sourceIndex + 1);
-        } else {
-            hideLoading();
-            showError('All sources failed');
-            return false;
-        }
-    }
-
-    return true;
-}
-
-    resetPlayers();
-    showLoading();
-
-    let result = false;
-    try {
-        switch (State.currentPlayerType) {
-            case 'hls':
-                result = await playHls(source, channel);
-                break;
-            case 'drm':
-                result = await playDrm(source, channel);
-                break;
-            case 'iframe':
-                result = await playIframe(source, channel);
-                break;
-        }
-    } catch (e) {
-        console.error('Playback error:', e);
-        result = false;
-    }
-
-    if (!result) {
-        if (sourceIndex < channel.sources.length - 1) {
-            return await playStream(channel, sourceIndex + 1);
-        } else {
-            hideLoading();
-            showError('All sources failed');
-            return false;
-        }
-    }
-
-    return true;
-}
     
     showLoading(`Loading ${source.name}...`);
     updateLoadingDetails(State.currentPlayerType, source.name);
