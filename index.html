@@ -328,10 +328,10 @@ async function playHls(source, channel) {
                     UI.video.muted = true;
                     UI.video.play().then(() => {
                         showPlayOverlay();
-                        showOSD(`${channel.name} - Tap to unmute`, 3000);
+                        showOSD(`${channel.name} - Sesi açmak için dokunun`, 3000);
                     }).catch(() => {
                         showPlayOverlay();
-                        showOSD(`${channel.name} - Tap to play`, 3000);
+                        showOSD(`${channel.name} - Oynatmak için dokunun`, 3000);
                     });
                 });
             }
