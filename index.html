@@ -628,11 +628,11 @@ async function playDrm(source, channel) {
             try {
                 await UI.video.play();
                 showPlayOverlay();
-                showOSD(`${channel.name} - Tap to unmute`, 3000);
+                showOSD(`${channel.name} - TSesi açmak için dokun`, 3000);
                 return true;
             } catch (mutedError) {
                 showPlayOverlay();
-                showOSD(`${channel.name} - Tap to play`, 3000);
+                showOSD(`${channel.name} - Oynatmak için dokunun`, 3000);
                 return true;
             }
         }
