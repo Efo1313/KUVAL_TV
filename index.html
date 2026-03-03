@@ -130,52 +130,41 @@ const CONFIG = {
         enableWorker: true,
         enableSoftwareAES: true,
         
-        // --- KRİTİK EKLEME: Yönlendirmeli linkler için ---
-        xhrSetup: function (xhr, url) {
-            xhr.withCredentials = false;
-        },
-        // ------------------------------------------------
-
-        maxBufferLength: 60,
-        maxMaxBufferLength: 120,
-        backBufferLength: 30,
-        liveSyncDuration: 10,
-        liveMaxLatencyDuration: 30,
+        // Standart Buffer Ayarları
+        maxBufferLength: 30,
+        maxMaxBufferLength: 60,
+        liveSyncDurationCount: 3,
+        liveMaxLatencyDurationCount: 10,
         
-        // Zaman aşımı sürelerini ve deneme sayılarını esnettik
-        fragLoadingTimeOut: 30000,
-        manifestLoadingTimeOut: 30000,
-        levelLoadingTimeOut: 30000,
-        manifestLoadingMaxRetry: 6, // Hemen pes etmesin
-        levelLoadingMaxRetry: 6,
+        // Standart Zaman Aşımları
+        fragLoadingTimeOut: 20000,
+        manifestLoadingTimeOut: 20000,
+        levelLoadingTimeOut: 20000,
         
-        // Stall recovery (Dürtme ayarı)
-        highBufferWatchdogPeriod: 3,
-        nudgeOffset: 0.2, // Yönlendirmeli linklerde 0.2 daha kararlıdır
-        nudgeMaxRetry: 5,
-        maxFragLookUpTolerance: 0.3,
+        // Standart Hata Kurtarma
+        highBufferWatchdogPeriod: 2,
+        nudgeOffset: 0.1,
+        nudgeMaxRetry: 3,
+        maxFragLookUpTolerance: 0.2,
         
-        liveDurationInfinity: true, // Bazı workers linkleri sonsuz döngü ister
+        liveDurationInfinity: true,
         enableDateRangeMetadataCues: false,
         enableCEA708Captions: false,
         enableWebVTT: false,
         
+        // Kalite Ayarları
         startLevel: -1,
         capLevelToPlayerSize: false,
         capLevelOnFPSDrop: false,
-        fpsDroppedMonitoringPeriod: 5000,
-        fpsDroppedMonitoringThreshold: 0.2,
         
+        // Ses Ayarları
         audioPreference: 'original',
         enableAudioTrackPreload: true,
         autoStartLoad: true,
-        startPosition: -1,
-        audioTrackSelectionMode: 'default',
-        enableWebAudio: false,
         
+        // Tampon Yönetimi
         maxBufferSize: 60 * 1000 * 1000,
         maxBufferHole: 0.5,
-        stretchShortVideoTrack: false,
         forceKeyFrameOnDiscontinuity: true
     },
     
