@@ -13,7 +13,7 @@ window.rawChannels2 = [
         "sources": [
             {
                 "name": "⚡ Server 1",
-                "url": "https://most21-pro21.efomost2.workers.dev/playlist/hd-bnt-1-hd-online.m3u",
+                "url": "https://most21-pro21.efomost2.workers.dev/playlist/hd-bnt-1-hd-online.m3u8",
                 "type": "hls"
             }
         ],
@@ -23,11 +23,11 @@ window.rawChannels2 = [
     },
 
     {
-        "name": "TRT Youtube",
+        "name": "BNT 2",
         "sources": [
             {
                 "name": "Server 1",
-                "url": "https://www.youtube.com/embed/3XHebGJG0bc",
+                "url": "https://most21-pro21.efomost2.workers.dev/playlist/bnt-2-online.m3u8",
                 "type": "hls"
             }
         ],
